@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 90px;
+    width: 100%;
+
+    background-color: rgb(75, 41, 41);
+    color: white;
+}
+
+.score{
+    color: red;
+}
