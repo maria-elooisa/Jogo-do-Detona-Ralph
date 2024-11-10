@@ -2,6 +2,9 @@ h1{
     text-align: center;
 }
 
+.number{
+    margin: 20px 0 0 0;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -23,6 +26,7 @@ h1{
 
 .score{
     color: #ff0000;
+    margin-top: 10px;
 }
 
 .panel{
