@@ -8,11 +8,32 @@ const state = {
 
     values:{
         timeId: null,
+        countDownTimerID: setInterval(countDown, 1000),
         gameVelocity: 1000,
         hitPosition:0,
         result: 0,
+        curretTime: 60,
     },
 };
+
+function countDown(){
+    state.values.curretTime--;
+    state.view.timeLeft.textContent = state.values.curretTime;
+
+    if (state.values.curretTime <= 0){
+        clearInterval(state.values.countDownTimerID);
+        clearInterval(state.values.timeId);
+        alert("Game Over! O seu resultado foi: " + state.values.result);
+
+        // Reinicia o score e o tempo
+        state.values.result = 0;
+        state.values.curretTime = 60;
+        
+        // Atualiza o display de score e tempo na tela
+        state.view.score.textContent = state.values.result;
+        state.view.timeLeft.textContent = state.values.curretTime;
+    }
+}
 
 function randomSquare(){
     state.view.squares.forEach((square) => {
@@ -46,6 +67,7 @@ function addListenerHitBox(){
 function init (){
     moveEnemy();
     addListenerHitBox(); // Adicione esta linha
+    countDown();
 }
 
 
